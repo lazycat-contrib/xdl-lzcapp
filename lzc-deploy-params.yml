@@ -1,0 +1,18 @@
+params:
+  - id: auth_token
+    type: secret
+    name: "X auth_token cookie"
+    description: "Your x.com auth_token cookie value (browser dev tools > Application > Cookies > x.com). Required for downloading."
+  - id: api_token
+    type: secret
+    name: "API token"
+    description: "Bearer token for the XDL HTTP API / MCP / Chrome extension. Any long random string."
+
+locales:
+  zh:
+    auth_token:
+      name: "X auth_token Cookie"
+      description: "x.com 的 auth_token Cookie 值（浏览器开发者工具 > 应用 > Cookie > x.com），下载必需。"
+    api_token:
+      name: "API Token"
+      description: "XDL HTTP API / MCP / Chrome 扩展使用的 Bearer Token，填一串足够长的随机字符串。"

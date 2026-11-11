@@ -1,0 +1,20 @@
+application:
+  subdomain: xdl
+  multi_instance: false
+  public_path:
+    - /
+  upstreams:
+    - location: /
+      backend: http://xdl:47333/
+
+services:
+  xdl:
+    # ghcr.io/missuo/xdl:v2.3.1
+    image: registry.lazycat.cloud/czyt/missuo/xdl:PLACEHOLDER
+    environment:
+      - TZ=Asia/Shanghai
+      - XDL_AUTH_TOKEN={{ .U.auth_token }}
+      - XDL_API_TOKEN={{ .U.api_token }}
+    binds:
+      - /lzcapp/var/data:/data
+      - /lzcapp/var/downloads:/downloads

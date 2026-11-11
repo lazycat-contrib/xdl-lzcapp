@@ -1,0 +1,41 @@
+version: 1
+
+project:
+  root: .
+  build_config: lzc-build.yml
+  package_file: package.yml
+  output: dist/application.lpk
+  target_arch: amd64
+
+update:
+  sync_homepage: true
+  sync_license: true
+  strategy: publish
+  allow_downgrade: false
+  version_source:
+    type: image
+    image: xdl
+
+images:
+  - id: xdl
+    target: service
+    service: xdl
+    source: ghcr.io/missuo/xdl
+    channel: stable
+    sort: semver
+    tag_regex: '^v?[0-9]+\.[0-9]+\.[0-9]+$'
+    delivery:
+      mode: mirror
+      require_digest_match: true
+
+build:
+  run_buildscript: false
+  toolchains: []
+
+stores:
+  official:
+    enabled: false
+  private:
+    enabled: true
+    skip_if_version_exists: true
+    name: XDL

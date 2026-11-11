@@ -1,0 +1,20 @@
+package: community.lazycat.app.xdl
+version: 2.3.1
+name: XDL
+description: "Batch downloader for X/Twitter media: job queue, subscriptions, HTTP API and MCP, driven by CLI, Chrome extension or AI agents."
+min_os_version: 1.5.0
+author: missuo
+license: GPL-3.0
+homepage: https://github.com/missuo/xdl
+
+locales:
+  zh:
+    name: "XDL"
+    description: "X(Twitter) 媒体批量下载器：任务队列、订阅、HTTP API 与 MCP，可通过 CLI、Chrome 扩展或 AI Agent 驱动。"
+  en:
+    name: "XDL"
+    description: "Batch downloader for X/Twitter media: job queue, subscriptions, HTTP API and MCP, driven by CLI, Chrome extension or AI agents."
+
+permissions:
+  required:
+    - net.internet
