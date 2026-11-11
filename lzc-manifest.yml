@@ -6,11 +6,11 @@ application:
   upstreams:
     - location: /
       backend: http://xdl:47333/
-
 services:
   xdl:
     # ghcr.io/missuo/xdl:v2.3.1
-    image: registry.lazycat.cloud/czyt/missuo/xdl:PLACEHOLDER
+    # upstream: ghcr.io/missuo/xdl:2.3.1
+    image: ghcr.1ms.run/missuo/xdl:2.3.1
     environment:
       - TZ=Asia/Shanghai
       - XDL_AUTH_TOKEN={{ .U.auth_token }}
